@@ -1,7 +1,8 @@
 #div-general {
   display: flex;
   flex-direction: row;
-  height: calc(100vh - 57px);
+   height: calc(100vh - 57px); 
+   height: calc(100vh - 57px - env(safe-area-inset-bottom, 0));
 
 }
 
@@ -109,7 +110,8 @@
   color: white;
   /* position: fixed; */
   position: relative;
-  bottom: 0;
+   bottom: 0; 
+  
   left: 0;
   display: flex;
   justify-content: space-between;
@@ -269,6 +271,9 @@
     border: none;
     cursor: pointer;
     color: rgb(248, 248, 248);
+    z-index: 101; /* encima de login/register */
+    display: block; /* verificar que esté visible */
+    margin-right: 8px; /* espacio a la derecha */
   }
 
 

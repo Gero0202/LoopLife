@@ -120,9 +120,6 @@ export default function MainLayout({ children }: Props) {
 
 
             <div id={styles["div-navbar"]}>
-
-
-
                 <div className={styles['left-nav-section']}>
 
                     <button onClick={toggleMenu} className={styles["hamburger-button"]}>
@@ -163,7 +160,7 @@ export default function MainLayout({ children }: Props) {
 
                 </div>
               
-                <div style={{ width: "50px" }} />
+                <div className={styles['right-spacer']} />
             </div>
         </>
     )

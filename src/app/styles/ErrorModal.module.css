@@ -1,0 +1,82 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.3s ease-in-out;
+  position: relative;
+  text-align: center;
+  font-family: inherit;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.title {
+  font-size: 1.6rem;
+  color: #f16f6f;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.message {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.okButton {
+  background-color: #f16f6f;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.okButton:hover {
+  background-color: #ed4141;
+}
+
+.closeButton {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #bbb;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.closeButton:hover {
+  color: #555;
+}

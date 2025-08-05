@@ -1,0 +1,82 @@
+.profile-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.profile-title {
+  font-size: 2rem;
+  text-align: center;
+  color: #e45a8d;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-family: cursive;
+}
+
+.profile-card {
+  background: linear-gradient(135deg, #fff0f5, #fde5ee);
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: -11px 20px 24px rgb(0 0 0 / 38%);
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #f7a9cc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.profile-info p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.profile-info strong {
+  color: #222;
+}
+
+.edit-button {
+  margin-top: 1.2rem;
+  padding: 0.6rem 1.4rem;
+  background-color: #e45a8d;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.edit-button:hover {
+  background-color: #d44078;
+  transform: scale(1.03);
+}
+
+@media (max-width: 600px) {
+  .profile-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-info {
+    align-items: center;
+  }
+}

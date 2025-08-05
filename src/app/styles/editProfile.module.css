@@ -1,0 +1,119 @@
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #fff0f5, #fde5ee);
+  padding: 2rem;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.modal-title {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #e45a8d;
+  margin-bottom: 1.5rem;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.avatar-preview {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #f7a9cc;
+  margin: 0 auto 1rem auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.edit-input,
+.edit-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.edit-input:focus,
+.edit-textarea:focus {
+  border-color: #e45a8d;
+  box-shadow: 0 0 0 2px rgba(228, 90, 141, 0.2);
+}
+
+.edit-textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.save-button,
+.cancel-button {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.save-button {
+  background-color: #e45a8d;
+  color: #fff;
+}
+
+.save-button:hover {
+  background-color: #d44078;
+  transform: scale(1.03);
+}
+
+.cancel-button {
+  background-color: #f3f3f3;
+  color: #555;
+}
+
+.cancel-button:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.02);
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 1.5rem;
+  }
+
+  .modal-title {
+    font-size: 1.4rem;
+  }
+
+  .save-button,
+  .cancel-button {
+    font-size: 0.9rem;
+  }
+}

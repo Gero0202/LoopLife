@@ -1,0 +1,128 @@
+.library-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.library-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #e45a8d;
+  font-weight: 700;
+}
+
+.loop-wrapper {
+  margin-bottom: 2rem;
+  background-color: #f3d3de;
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.loop-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.edit-button,
+.delete-button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.edit-button {
+  background-color: #e45a8d;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #d44078;
+  transform: scale(1.05);
+}
+
+.delete-button {
+  background-color: #ffb3b3;
+  color: #812222;
+}
+
+.delete-button:hover {
+  background-color: #ff8c8c;
+  transform: scale(1.05);
+}
+
+
+.empty-library {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.library-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #e45a8d;
+  margin-bottom: 1.5rem;
+}
+
+.empty-content {
+  background: linear-gradient(135deg, #fff0f5, #fde5ee);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.empty-message {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.create-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  background-color: #e45a8d;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.create-button:hover {
+  background-color: #d44078;
+  transform: scale(1.03);
+}
+
+
+@media (max-width: 768px) {
+  .loop-buttons {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .edit-button,
+  .delete-button {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .empty-message {
+    font-size: 1rem;
+  }
+
+  .create-button {
+    width: 100%;
+  }
+}

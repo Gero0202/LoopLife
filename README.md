@@ -100,8 +100,6 @@ El proyecto está desplegado en Vercel y Supabase:
 
 ## 👤 Autor y Créditos
 
-### 10. Créditos y Autoría
-
 * **Autor**: Geronimo Tortosa
 * **GitHub**: [Gero0202](https://github.com/Gero0202)
 * **Diseño**: El diseño y la implementación de este proyecto son 100% originales del autor.

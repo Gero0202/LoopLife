@@ -291,3 +291,17 @@
 
 }
 
+/* Solo para Safari iOS, móviles */
+@media not all and (min-resolution:.001dpcm) {
+  @supports (-webkit-appearance:none) {
+    /* Aquí va tu css para Safari iOS */
+    #div-navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding-top: env(safe-area-inset-top);
+      z-index: 1000;
+    }
+  }
+}

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import styles from "@/app/styles/cardLoop.module.css"
 import { IoHeartOutline, IoPlayCircleOutline, IoChatboxOutline, IoHeartSharp } from "react-icons/io5";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import EmbeddedPlayer from "./EmbeddedPlayer";
 
 
@@ -44,25 +44,39 @@ export default function CardLoop({
     onCommment
 }: cardLoopProps) {
     const [showPlayer, setShowPlayer] = useState(false)
+    const [isMobile, setIsMobile] = useState(false)
+
+    useEffect(() => {
+        function handleResize() {
+            setIsMobile(window.innerWidth <= 500);
+        }
+
+        handleResize(); 
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, [])
+
     return (
         <>
             <div className={styles["card-loop"]}>
                 <img src={avatar} alt={title} />
-
+                
                 <div className={styles["card-loop-info"]}>
                     <div className={styles["card-info-text"]}>
+                        
                         <div className={styles["div-info-text-left"]}>
                             <p className={styles["card-loop-username"]}>{username}</p>
                             <p className={styles["card-loop-title"]}>{title}</p>
                         </div>
 
                         <div className={styles["div-info-text-right"]}>
-                            <p>Mood: {mood ? mood : ""}</p>
-                            <p>Genero: {genre ? genre : ""}</p>
-                            <p>Puntaje: {rating ? rating : ""}</p>
+                            <p><strong>Mood: </strong>{mood ? mood : ""}</p>
+                            <p><strong>Genero: </strong>{genre ? genre : ""}</p>
+                            <p><strong>Puntaje: </strong>{rating ? rating : ""}</p>
                         </div>
+                      
                         <div style={{ marginTop: "-13" }}>
-                            <p style={{ fontSize: "16px" }}>Descripcion: </p>
+                            <p style={{ fontSize: "16px", marginTop: "22px" }}>Descripcion: </p>
                             <p className={styles["card-loop-description"]}>{description}</p>
                         </div>
                     </div>
@@ -110,7 +124,7 @@ export default function CardLoop({
                 >
                     <div
                         className={styles["modal-player"]}
-                        onClick={(e) => e.stopPropagation()} 
+                        onClick={(e) => e.stopPropagation()}
                     >
                         <button
                             className={styles["close-button"]}

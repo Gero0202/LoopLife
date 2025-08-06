@@ -9,7 +9,7 @@ import { useError } from "../context/ErrorContext";
 import toast from "react-hot-toast";
 
 export default function Login() {
-    const [email, setEmail] = useState('')
+    const [identifier, setIdentifier] = useState('')
     const [password, setPassword] = useState('')
     const [errorMessage, setErrorMessage] = useState<string | null>(null)
     const [loading, setLoading] = useState(false)
@@ -25,7 +25,7 @@ export default function Login() {
 
 
 
-        const result = await login(email, password)
+        const result = await login(identifier, password)
 
         if (result.success) {
             toast.success("¡Bienvenido!")
@@ -49,10 +49,10 @@ export default function Login() {
                     )}
 
                     <input
-                        type="email"
-                        placeholder="Email"
-                        value={email}
-                        onChange={e => { setEmail(e.target.value); setErrorMessage(null) }}
+                        type="text"
+                        placeholder="Email o nombre de usuario"
+                        value={identifier}
+                        onChange={e => { setIdentifier(e.target.value); setErrorMessage(null) }}
                         className={styles["login-input"]}
 
                         required

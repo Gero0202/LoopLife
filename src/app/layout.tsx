@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${noto_sans.variable}`}>
+    <html lang="en" className={`${noto_sans.variable}`} translate="no">
       <body>
         <AuthProvider>
           <ErrorProvider>

@@ -1,81 +1,82 @@
 .card-loop {
-    display: flex;
-    align-items: flex-start;
-    padding: 24px;
-    margin-bottom: 18px;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
-    font-family: var(--font-noto-sans), sans-serif;
-    background: rgba(255, 255, 255, 0.751);
-    backdrop-filter: blur(6px);
-    border-radius: 16px;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  padding: 24px;
+  margin-bottom: 18px;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-noto-sans), sans-serif;
+  background: rgba(255, 255, 255, 0.751);
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .card-loop:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .card-loop img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 20px;
-    object-fit: cover;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .card-loop-info {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 180px;
 }
 
 
 
 .card-loop-buttons {
-    display: flex;
-    justify-content: flex-end;
-    gap: 18px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 18px;
 }
 
 .card-div-like {
-    text-align: center;
+  text-align: center;
 
 }
 
 .card-div-comment {
-    text-align: center;
+  text-align: center;
 
 
 }
 
 .card-loop-username {
-    font-weight: 600;
-    font-size: 15px;
+  font-weight: 600;
+  font-size: 15px;
 }
 
 .card-loop-title {
-    font-size: 16px;
-    font-weight: 500;
-    color: #111;
+  font-size: 16px;
+  font-weight: 500;
+  color: #111;
 }
 
 .card-loop-description {
-    font-size: 14px;
-    color: #666;
-    max-width: 400px;
+  font-size: 14px;
+  color: #666;
+  max-width: 400px;
 }
 
 
 .div-info-text-left p,
 .div-info-text-right p {
-    margin: 2px 0;
-    font-size: 15px;
-    color: #444;
+  margin: 2px 0;
+  font-size: 15px;
+  color: #444;
 }
 
 
@@ -83,43 +84,43 @@
 .card-loop-like-button,
 .card-loop-comment-button,
 .card-loop-play-button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.2s ease;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
 .card-loop-like-button:hover,
 .card-loop-comment-button:hover,
 .card-loop-play-button:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 
 
 .card-loop-likes,
 .card-loop-comment {
-    font-size: 14px;
-    color: #333;
-    text-align: center;
-    margin-top: 4px;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+  margin-top: 4px;
 }
 
 .card-info-text {
 
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    height: 134px;
-    
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 134px;
+
 }
 
 .div-info-text-left {
-    width: 50%;
+  width: 50%;
 }
 
 .div-info-text-right {
-    width: 50%;
+  width: 50%;
 }
 
 .modal-overlay {
@@ -148,7 +149,7 @@
 .player-wrapper {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; 
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   border-radius: 12px;
@@ -188,6 +189,7 @@
     opacity: 0;
     backdrop-filter: blur(0px);
   }
+
   to {
     opacity: 1;
     backdrop-filter: blur(4px);
@@ -199,6 +201,7 @@
     transform: scale(0.92);
     opacity: 0;
   }
+
   100% {
     transform: scale(1);
     opacity: 1;
@@ -218,11 +221,20 @@
     height: 32px;
     font-size: 1rem;
   }
+
+  .div-info-text-left {
+    width: 100%;
+  }
+
+  .div-info-text-right {
+    width: 100%;
+    padding-top: 5px;
+  }
 }
 
 
 @media(max-width: 1280) {
-    .card-info-text{
+  .card-info-text {
     height: 233px;
   }
 }
@@ -233,30 +245,40 @@
     justify-content: space-between;
     align-items: center;
   }
-  .card-loop img{
+
+  .card-loop img {
     margin-right: 0;
     margin-bottom: 4px;
   }
-  .card-info-text{
+
+  .card-info-text {
     height: 127px;
   }
 }
 
-@media(max-width: 696px){
-    .card-loop-buttons{
-        justify-content: center;
-    margin-top: 146px;
-    }
+@media(max-width: 696px) {
+  .card-loop-buttons {
+    justify-content: center;
+    margin-top: 84%;
+  }
 }
 
 @media(max-width: 369px) {
-  .div-info-text-left{
+  .div-info-text-left {
     width: 54%;
-  } 
+  }
+}
+
+@media(max-width: 320px){
+  .card-loop-buttons{
+    margin-top: 127%;
+  }
 }
 
 @media(max-width: 303px) {
-  .card-info-text{
+  .card-info-text {
     gap: 22px;
   }
+
+  
 }

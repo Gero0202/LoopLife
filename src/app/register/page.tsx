@@ -61,9 +61,12 @@ export default function Register() {
             return
         }
 
-        if (form.avatar && !form.avatar.startsWith("http")) {
-            showError("La URL del avatar no parece válida.")
-            return
+        if (form.avatar) { // Solo valida si el campo avatar no está vacío
+            const imageUrlRegex = /^(https?:\/\/[^\s/$.?#].[^\s]*)\.(jpg|jpeg|png)$/i;
+            if (!imageUrlRegex.test(form.avatar)) {
+                showError("La URL del avatar debe ser una imagen .jpg, .jpeg o .png válida.");
+                return;
+            }
         }
 
         setLoading(true)

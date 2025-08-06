@@ -19,7 +19,7 @@ type AuthContextType = {
     loading: boolean
     setCurrentUser: (user: User | null) => void
     logout: () => Promise<void>
-    login: (email: string, password: string) => Promise<{ success: boolean; message?: string }>
+    login: (identifier: string, password: string) => Promise<{ success: boolean; message?: string }>
 
 }
 
@@ -72,20 +72,21 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         }
     }
 
-    const login = async (email: string, password: string) => {
+    const login = async (identifier: string, password: string) => {
         try {
             const res = await fetch("/api/auth/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email, password }),
+                body: JSON.stringify({ identifier, password }),
             })
 
             const data = await res.json()
 
             if (res.ok) {
-                setCurrentUser(data.user) // ¡Clave!
+                setCurrentUser(data.user) 
                 return { success: true }
             } else {
+                console.error("Error en la respuesta del servidor:", data)
                 return { success: false, message: data.message || "Error desconocido" }
             }
         } catch (error) {

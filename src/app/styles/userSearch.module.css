@@ -77,13 +77,10 @@
 }
 
 .user-loop-item {
-  transition: transform 0.2s ease;
   cursor: pointer;
 }
 
-.user-loop-item:hover {
-  transform: scale(1.01);
-}
+
 
 
 @media (max-width: 768px) {

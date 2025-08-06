@@ -5,7 +5,8 @@ import jwt from "jsonwebtoken";
 
 
 interface LoginData {
-    email: string;
+    identifier: string; 
+    //email: string;
     password: string
 }
 
@@ -16,15 +17,15 @@ if (!JWT_SECRET) {
 
 export async function POST(req: Request) {
     try {
-        const { email, password } = (await req.json()) as LoginData
-        if (!email || !password) {
+        const { identifier, password } = (await req.json()) as LoginData
+        if (!identifier || !password) {
             return NextResponse.json(
                 { message: "Faltan campos obligatorios: email y password" },
                 { status: 400 }
             )
         }
 
-        const result = await pool.query('SELECT * FROM users WHERE email = $1', [email])
+        const result = await pool.query('SELECT * FROM users WHERE email = $1 OR username = $1', [identifier])
         const user = result.rows[0]
         
 
